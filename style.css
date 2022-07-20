@@ -1,0 +1,992 @@
+/*
+Theme Name: ShebaFarm
+Text Domain: ShebaFarm
+Version: 1.0
+Description: E-commerce minimalist theme
+Tags: responsive, farm, foliage, bootstrap
+Author: Paul Morogo
+Author URI: https://github.com/ipaullly
+*/
+@font-face {
+  font-family: "Net Herbarius";
+  src: url(./assets/fonts/FontsFree-Net-Herbarium.ttf);
+}
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #ee3577;
+  --red: #dc3545;
+  --orange: #f68e62;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --cream: #F8F6EF;
+  --white: #fff;
+  --gray: #767575;
+  --gray-dark: #434242;
+	--primary: #a4cd39;
+  /* --primary: #6f42c1; */
+  --secondary: #4f4f4f;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #c2c2c2;
+  --lightgray: #eeeeee;
+  --dark: #434242;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  /* Font Sizes */
+  --font-normal: 1em;
+  --font-small: 0.8125rem;
+  /* Sidebar */
+  --sidebar-width: 280px;
+  --content-max-width: 860px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  line-height: 1.15;
+}
+body {
+  color: var(--secondary);
+  overflow-x: hidden;
+}
+a {
+  color: var(--pink);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--gray-dark);
+  font-weight: bold;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 0.375rem 1rem;
+  height: 2.75rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:focus,
+.btn.focus {
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  color: #fff;
+}
+
+.form-control {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  height: 2.75rem;
+  border-color: var(--light);
+}
+
+.theme-bg-light {
+  background: var(--light) !important;
+}
+
+.theme-bg-dark {
+  background: var(--dark) !important;
+}
+.theme-bg-cyan {
+  background: var(--cyan) !important;
+}
+.main-wrapper	header {
+	/* width: var(--sidebar-width); */
+	color: #000;
+}
+.main-wrapper	header .site-title {
+  /* color: var(--white); */
+  font-size: 1.2em;
+	text-decoration: none;
+  display: block;
+}
+.main-wrapper	header .btn-primary {
+  background: var(--primary);
+  border-color: transparent;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.main-wrapper	header .btn-primary:hover {
+  background: var(--white);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+.main-wrapper	header .navbar {
+  padding: 2rem 1rem;
+}
+.main-wrapper	header .navbar-dark .navbar-toggler {
+  /* border: none; */
+  padding: 0.25rem 0.6rem;
+}
+.navbar-toggler-icon .fa-bars {
+  /* border: none; */
+  color: var(--gray);
+}
+.main-wrapper	header .navbar-dark .navbar-toggler:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+.main-wrapper	header .navbar-dark .navbar-toggler-icon {
+  background-image: url("");
+}
+.main-wrapper	header .nav-item {
+  font-weight: bold;
+}
+.main-wrapper	header .nav-item.active a {
+  border-top: 2px solid var(--primary);
+}
+.main-wrapper	header .nav-item.active a:hover {
+  text-decoration: none;
+}
+.main-wrapper	header .nav-item a {
+  color: rgba(0, 0, 0, 0.6);
+}
+.main-wrapper	header .nav-item:hover {
+  border-top: 2px solid var(--primary);
+  /* text-decoration: underline; */
+}
+.main-wrapper	header .book-now {
+  margin-right: 2rem;
+}
+.main-wrapper	header .shopping-icon {
+  /* margin-left: 2rem; */
+  font-size: 2rem;
+}
+
+.main-content {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.main-content .modal-content {
+  top: 20%;
+  position: absolute;
+  background: transparent;
+  right: auto;
+  text-align: center;
+  z-index: 5;
+  color: var(--white);
+  border: none;
+}
+.main-content .modal-content h1 {
+  font-size: 9rem;
+  font-family: "Net Herbarius";
+}
+.main-content .modal-content button {
+  text-transform: uppercase;
+  width: 10%;
+  background: var(--primary);
+  border-color: transparent;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.main-content .modal-content button:hover {
+  background: var(--white);
+  border: 1px solid var(--primary);
+  border-color: transparent;
+  color: var(--primary);
+}
+.main-about {
+  height: 100vh;
+  min-height: 100vh;
+}
+.main-about h3 {
+  font-size: 29px;
+  font-family: "Net Herbarius";
+  color: var(--primary);
+}
+.main-about h1 {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 47px;
+  width: 80%;
+}
+
+.main-about button {
+  text-transform: uppercase;
+  width: 30%;
+  background: var(--primary);
+  border-color: transparent;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.main-about button:hover {
+  background: var(--white);
+  border: 1px solid var(--primary);
+  border-color: transparent;
+  color: var(--primary);
+}
+.about-content {
+  padding: 0;
+}
+.about-content .about-info {
+  min-height: 90vh;
+  width: 60ch;
+  padding: 0;
+}
+.about-content h3 {
+  font-family: "Net Herbarius";
+  color: var(--primary);
+}
+.about-content .banner-img img{
+  height: 360px;
+  width: 100%;
+  margin: 2vh 0 6vh 0;
+  object-fit: cover;
+}
+
+/* cart content*/
+.cart-page{
+  padding: 0;
+}
+.cart-page .banner-img img{
+  height: 360px;
+  width: 100%;
+  margin: 2vh 0 6vh 0;
+  object-fit: cover;
+}
+.cart-page .cart-container {
+  height: 100%;
+  margin: 4vh auto 10%;
+}
+.cart-page .cart-container h3{
+  text-decoration: underline;
+  margin: 0 0 2vh 0;
+  color: var(--secondary);
+  letter-spacing: 1px;
+}
+.cart-page .cart-container .cart-collaterals .checkout-button {
+  text-transform: uppercase;
+  background: var(--dark);
+  border: 2px solid var(--primary);
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: var(--primary);
+}
+.cart-page .cart-container .cart-collaterals .checkout-button:hover {
+  background: var(--white);
+  border: 2px solid var(--primary);
+  color: var(--dark);
+}
+.cart-container .woocommerce-cart-form .shop_table .coupon button {
+  text-transform: uppercase;
+  background: var(--dark);
+  border: 2px solid var(--primary);
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: var(--primary);
+}
+.cart-container .woocommerce-cart-form .shop_table .coupon button:hover {
+  background: var(--white);
+  border: 2px solid var(--primary);
+  color: var(--dark);
+}
+.cart-container .woocommerce-cart-form .shop_table .button {
+  text-transform: uppercase;
+  background: var(--dark);
+  border: 2px solid var(--primary);
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: var(--primary);
+}
+.cart-container .woocommerce-cart-form .shop_table .button:hover {
+  background: var(--white);
+  border: 2px solid var(--primary);
+  color: var(--dark);
+}
+
+/* order success page */
+.woocommerce .woocommerce-order{
+  width: 70%;
+  margin: 10% auto 15%;
+}
+
+.woocommerce .woocommerce-order .woocommerce-notice{
+  text-decoration: underline;
+}
+
+.woocommerce .woocommerce-order p{
+  text-align: center;
+}
+
+.woocommerce .woocommerce-checkout{
+  width: 70%;
+  margin: 10% auto 15%;
+}
+
+.woocommerce .woocommerce-checkout .input-text{
+  padding: 10px 5px;
+  border-radius: 6px;
+}
+/* main crops for sale section */
+.main-crops-banner {
+  position: relative;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.main-crops-banner .banner-img img{
+  height: 360px;
+  width: 100%;
+  margin: 2vh 0 6vh 0;
+  object-fit: cover;
+}
+.main-services-banner {
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.main-services-banner .banner-img img{
+  height: 360px;
+  width: 100%;
+  margin: 2vh 0 6vh 0;
+  object-fit: cover;
+}
+.main-services{
+  position: relative;
+  min-height: 100%;
+  margin: 30vh auto 18vh;
+}
+
+.main-services .image-row .crop-card{
+  width: 27vw;
+  min-height: 350px;
+  z-index: 5;
+  position: relative;
+}
+.main-services .image-row .crop-card .header-title{
+  position: absolute;
+  top: 0;
+  color: white;
+}
+.main-services .image-row .crop-card .header-footer{
+  position: absolute;
+  bottom: 0;
+  left: 1vw;
+  font-size: 3rem;
+  font-family: "Net Herbarius";
+  z-index: 10;
+  color: white;
+}
+.main-services .sheba-name{
+  position: absolute;
+  top: -38vh;
+  width: 100%;
+}
+.main-services .sheba-name > span{
+  font-size: 16rem;
+  font-family: "Net Herbarius";
+  /* color: #f8f6ef; */
+  color: #e8e8bf;
+  z-index: 2;
+}
+
+
+
+.main-crops{
+  position: relative;
+  height: 100vh;
+}
+
+.main-crops .image-row .crop-card{
+  width: 27vw;
+  min-height: 350px;
+  z-index: 5;
+  position: relative;
+}
+.main-crops .image-row .crop-card .header-title{
+  position: absolute;
+  top: 0;
+  color: white;
+}
+.main-crops .image-row .crop-card .header-footer{
+  position: absolute;
+  bottom: 0;
+  left: 1vw;
+  font-size: 3rem;
+  font-family: "Net Herbarius";
+  z-index: 10;
+  color: white;
+}
+.main-crops .sheba-name{
+  position: absolute;
+  top: -38vh;
+  width: 100%;
+}
+.main-crops .sheba-name > span{
+  font-size: 16rem;
+  font-family: "Net Herbarius";
+  /* color: #f8f6ef; */
+  color: #e8e8bf;
+  z-index: 2;
+}
+
+.wheat-banner{
+  padding: 0;
+  margin: 0;
+}
+
+.img-banner{
+  position: absolute;
+  bottom: -10vh;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* New product section */
+.new-product {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-product .img-bg {
+  position: absolute;
+  top: -3vh;
+  z-index: 10;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.new-product .new-product-info{
+  z-index: 20;
+}
+
+.new-product .new-product-info h3 {
+  font-size: 29px;
+  font-family: "Net Herbarius";
+  color: var(--primary);
+}
+.new-product .new-product-info p {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 2rem;
+  width: 40ch;
+}
+.new-product .new-product-info h1 {
+  font-size: 45px;
+  font-weight: 700;
+  width: 80%;
+  color: #fff;
+}
+
+.new-product .new-product-info button {
+  text-transform: uppercase;
+  width: 30%;
+  background: #1F1E17;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.new-product .new-product-info button:hover {
+  background: var(--primary);
+  border-color: transparent;
+  color: var(--secondary);
+}
+
+/* organic product area */
+
+.organic-product {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100%;
+  margin-top: 15%;
+  margin-bottom: 10%;
+}
+
+.organic-product h3 {
+  font-size: 29px;
+  font-family: "Net Herbarius";
+  color: var(--primary);
+}
+.organic-product p {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  line-height: 2rem;
+  width: 40ch;
+}
+.organic-product h1 {
+  font-size: 45px;
+  font-weight: 700;
+  width: 80%;
+  color: var(--secondary);
+}
+
+.organic-product button {
+  text-transform: uppercase;
+  width: 30%;
+  background: #fff;
+  border: 2px solid var(--primary);
+  color: var(--secondary);
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.organic-product button:hover {
+  background: var(--primary);
+  border-color: transparent;
+}
+
+.organic-product .year-banner{
+  position: relative;
+}
+
+.organic-product .year-banner .years {
+  position: absolute;
+  background-color: var(--primary);
+  padding: 2rem 0.8rem;
+  border-radius: 18px;
+  top: 2rem;
+  left: -3rem;
+}
+
+.organic-product .years h3 {
+  font-family: "Net Herbarius";
+  color: #fff;
+  font-size: 3rem;
+}
+.organic-product .years span {
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Product slider section */
+.product-slider {
+  margin: 0;
+  padding: 0 0 8vh 0;
+  height: 100%;
+  position: relative;
+}
+
+.product-slider .img-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  object-fit: cover;
+}
+
+.product-slider .product-slider-info h3{
+  font-family: "Net Herbarius";
+  color: var(--primary);
+}
+
+.product-slider .product-slider-info .title-info span{
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.product-slider .product-slider-info .title-sub h3{
+  font-size: 3rem;
+}
+
+.product-slider .product-slider-info .title-info h3{
+  font-size: 1.1rem;
+}
+.product-slider .product-slider-info .title-sub span{
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+/***********************/
+/*     Screenshots     */
+/***********************/
+.carousel {
+  margin: 2vh 0;
+}
+.carousel .carousel-inner .carousel-item .carousel-caption {
+  border-radius: 10px;
+  background-color: var(--lightgray);
+  color: var(--gray-dark);
+  text-align: center;
+}
+.carousel .carousel-inner .carousel-item .carousel-caption p{
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin: 0 20px;
+}
+.carousel .carousel-inner .carousel-item .carousel-caption button {
+  text-transform: uppercase;
+  margin-top: 2vh;
+  width: 40%;
+  background: var(--primary);
+  border-color: transparent;
+  font-size: 0.8rem;
+  padding: 0.2rem;
+}
+.carousel .carousel-inner .carousel-item .carousel-caption button:hover {
+  background: #fff;
+  border: 2px solid var(--primary);
+  color: var(--secondary);
+}
+.carousel .carousel-indicators {
+  position: absolute;
+  bottom: 0;
+}
+.carousel .carousel-indicators button {
+  background-color: var(--secondary);
+  border-radius: 30%;
+}
+.carousel .carousel-control-prev span {
+  color: var(--dark);
+}
+.carousel .carousel-control-prev .carousel-control-prev-icon {
+  background-color: var(--dark);
+}
+.carou-cont .all-prod-btn button {
+  text-transform: uppercase;
+  margin-top: 4vh;
+  width: 80%;
+  background: var(--primary);
+  border-color: transparent;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.carou-cont .all-prod-btn button:hover {
+  background: var(--cream);
+  border: 2px solid var(--primary);
+  color: var(--secondary);
+}
+
+/***********************/
+/*     Testimonial     */
+/***********************/
+.testimonial{
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.testimonial .img-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  object-fit: fill;
+  padding: 0;
+  margin: 0;
+}
+.testimonial h1{
+  font-family: "Net Herbarius";
+  color: var(--primary);
+}
+/***********************/
+/*     Footer     */
+/***********************/
+
+.footer {
+  color: var(--cream);
+}
+.footer h1 {
+  color: var(--white);
+}
+.footer h4 {
+  color: var(--gray);
+  margin-top: 2rem;
+}
+.footer h3 {
+  font-family: "Net Herbarius";
+  color: var(--primary);
+}
+.footer button {
+  text-transform: uppercase;
+  margin-top: 2vh;
+  width: 40%;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background-color: var(--dark);
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.footer button:hover {
+  background: var(--primary);
+  color: var(--dark);
+  border-color: transparent;
+}
+.footer i {
+  border-radius: 50%;
+  padding: .6rem .7rem;
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+  color: var(--dark);
+}
+.footer i:hover {
+  border-radius: 50%;
+  padding: .6rem;
+  border: 2px solid var(--primary);
+  background-color: var(--dark);
+  color: var(--primary);
+}
+/*
+  wordpress class customizations
+*/
+
+.single_add_to_cart_button{
+  text-transform: uppercase;
+  margin-top: 2vh;
+  width: 15%;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background-color: var(--dark);
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.single_add_to_cart_button:hover {
+  background: var(--primary);
+  color: var(--dark);
+  border-color: transparent;
+}
+
+.current_page_item,
+.current-menu-ancestor {
+	border-top: 2px solid var(--primary);
+}
+
+/*
+Woo Commerce
+*/
+
+.woocommerce-banner {
+  padding: 0;
+}
+
+.woocommerce-banner .banner-img img{
+  height: 360px;
+  width: 100%;
+  margin: 2vh 0 6vh 0;
+  object-fit: cover;
+}
+.single_add_to_cart_button {
+  margin: 0 0 0 2rem;
+}
+
+#sku-span > span {
+ font-weight: 700;
+}
+
+.woocommerce-tabs .tabs {
+  border-bottom: 1px solid var(--primary);
+}
+.woocommerce-tabs .tabs li {
+  border-radius: 12px 12px 0 0;
+  padding: 10px 20px;
+  list-style: none;
+} 
+.woocommerce-tabs .tabs li a {
+  text-decoration: none;
+  color: var(--secondary);
+}
+.woocommerce-tabs .tabs .active {
+  background-color: #a4cd39;
+}
+.woocommerce-tabs .tabs .active a {
+  color: white;
+}
+
+#review_form .comment-reply-title {
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+#review_form .comment-form .comment-notes {
+  display: flex;
+  flex-direction: column;
+  font-size: smaller;
+}
+
+#review_form .comment-form .comment-form-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+#review_form .comment-form .comment-form-comment textarea{
+  border-radius: 12px;
+  max-width: 50vw;
+}
+
+#review_form .comment-form .comment-form-email {
+  display: flex;
+  flex-direction: column;
+}
+
+#review_form .comment-form .comment-form-email input{
+  border-radius: 5px;
+  margin: 10px 0 0 0;
+  width: 25vw;
+  padding: 10px 5px;
+}
+
+#review_form .comment-form .comment-form-author {
+  display: flex;
+  flex-direction: column;
+}
+
+#review_form .comment-form .comment-form-author input{
+  border-radius: 5px;
+  margin: 10px 0 0 0;
+  width: 25vw;
+  padding: 10px 5px;
+}
+
+#review_form .comment-form .comment-form-author input{
+  border-radius: 5px;
+  margin: 10px 0 0 0;
+  width: 25vw;
+  padding: 10px 5px;
+}
+
+#review_form .comment-form .form-submit input{
+  text-transform: uppercase;
+  margin-top: 2vh;
+  width: 15%;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background-color: var(--dark);
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+#review_form .comment-form .form-submit input:hover {
+  background: var(--primary);
+  color: var(--dark);
+  border-color: transparent;
+}
+#shop-container {
+  margin: 1vh auto 10vh auto;
+}
+#shop-container .page-title{
+  visibility: hidden;
+}
+#shop-container .products > li{
+  list-style: none;
+}
+#shop-container .products .product{
+  margin-bottom: 1.5rem;
+}
+#shop-container .products .product a{
+  display: block;
+}
+#shop-container .products li > .button{
+  text-transform: uppercase;
+  margin-top: 2vh;
+  width: 100%;
+  border: 2px solid var(--primary);
+  color: var(--secondary);
+  background-color: var(--primary);
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+#shop-container .products li > .button:hover {
+  border: 2px solid var(--primary);
+  color: var(--dark);
+  font-weight: 600;
+  background-color: var(--white);
+}
+#shop-container .products {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 2rem 0 0 0;
+  justify-content: space-between;
+}
+#shop-container .products li > a {
+  text-decoration: none;
+}
+
+
+.menu-toggle {
+  width: 100%;
+}
+.menu-toggle .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.menu-toggle ul li:last-child{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
+}
+.menu-toggle ul li:last-child:hover{
+  border-top: none;
+}
+.menu-toggle ul li:last-child a:hover{
+  border-top: 1px solid var(--primary);
+}
+.menu-toggle ul li a{
+  margin: 0 1rem;
+}
+
+
+@media (max-width: 992px) {
+  .main-content .modal-content h1 {
+    font-size: 6rem;
+    font-family: "Net Herbarius";
+  }
+  .main-content .modal-content button {
+    text-transform: uppercase;
+    width: 10%;
+    background: var(--primary);
+    border-color: transparent;
+    font-size: 0.7rem;
+    padding: 0.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content .modal-content {
+    top: 5%;
+  }
+  .main-content .modal-content h1 {
+    font-size: 3rem;
+    font-family: "Net Herbarius";
+  }
+  .main-content p {
+    font-size: 1rem;
+  }
+  .main-content .modal-content button {
+    text-transform: uppercase;
+    width: 20%;
+    background: var(--primary);
+    border-color: transparent;
+    font-size: 0.7rem;
+    padding: 0.2rem;
+  }
+}
