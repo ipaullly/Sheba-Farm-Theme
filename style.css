@@ -126,58 +126,52 @@ h6 {
 	text-decoration: none;
   display: block;
 }
-.main-wrapper	header .btn-primary {
-  background: var(--primary);
-  border-color: transparent;
-  font-size: 1rem;
-  padding: 0.5rem;
+
+.main-wrapper {
+  background-color: white;
 }
-.main-wrapper	header .btn-primary:hover {
-  background: var(--white);
-  border: 1px solid var(--primary);
-  color: var(--primary);
-}
-.main-wrapper	header .navbar {
+.main-wrapper	.navbar {
   padding: 2rem 1rem;
 }
-.main-wrapper	header .navbar-dark .navbar-toggler {
+.main-wrapper .navbar-toggler {
   /* border: none; */
   padding: 0.25rem 0.6rem;
 }
-.navbar-toggler-icon .fa-bars {
-  /* border: none; */
-  color: var(--gray);
-}
-.main-wrapper	header .navbar-dark .navbar-toggler:hover {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-}
-.main-wrapper	header .navbar-dark .navbar-toggler-icon {
-  background-image: url("");
-}
-.main-wrapper	header .nav-item {
+
+
+.main-wrapper .nav-item {
   font-weight: bold;
 }
-.main-wrapper	header .nav-item.active a {
+/* .main-wrapper .nav-item.active a {
   border-top: 2px solid var(--primary);
-}
-.main-wrapper	header .nav-item.active a:hover {
+} */
+.main-wrapper .nav-item.active a:hover {
   text-decoration: none;
 }
-.main-wrapper	header .nav-item a {
+.main-wrapper .nav-item a {
   color: rgba(0, 0, 0, 0.6);
 }
-.main-wrapper	header .nav-item:hover {
-  border-top: 2px solid var(--primary);
-  /* text-decoration: underline; */
+.main-wrapper .nav-menu-list{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
 }
-.main-wrapper	header .book-now {
-  margin-right: 2rem;
+.main-wrapper .menu-list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
-.main-wrapper	header .shopping-icon {
-  /* margin-left: 2rem; */
-  font-size: 2rem;
+.main-wrapper .menu-list > li:last-child {
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 auto;
+}
+.main-wrapper .menu-list .nav-item:last-child a {
+  color: rgba(176, 0, 138, 0.6);
 }
 
 .main-content {
@@ -199,23 +193,26 @@ h6 {
   font-size: 9rem;
   font-family: "Net Herbarius";
 }
-.main-content .modal-content button {
+.main-content .modal-content a {
+  text-decoration: none;
+  color: #000;
+}
+.main-content .modal-content a {
   text-transform: uppercase;
   width: 10%;
   background: var(--primary);
-  border-color: transparent;
   font-size: 1rem;
   padding: 0.5rem;
 }
-.main-content .modal-content button:hover {
-  background: var(--white);
+.main-content .modal-content a:hover {
+  background: transparent;
   border: 1px solid var(--primary);
-  border-color: transparent;
   color: var(--primary);
+  font-weight: 600;
 }
 .main-about {
-  height: 100vh;
-  min-height: 100vh;
+  min-height: 100%;
+  z-index: 12;
 }
 .main-about h3 {
   font-size: 29px;
@@ -229,18 +226,20 @@ h6 {
   width: 80%;
 }
 
-.main-about button {
+.main-about a {
+  text-decoration: none;
+  color: #000;
+}
+.main-about a {
   text-transform: uppercase;
   width: 30%;
   background: var(--primary);
-  border-color: transparent;
   font-size: 1rem;
   padding: 0.5rem;
 }
-.main-about button:hover {
+.main-about a:hover {
   background: var(--white);
   border: 1px solid var(--primary);
-  border-color: transparent;
   color: var(--primary);
 }
 .about-content {
@@ -346,19 +345,7 @@ h6 {
   border-radius: 6px;
 }
 /* main crops for sale section */
-.main-crops-banner {
-  position: relative;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-.main-crops-banner .banner-img img{
-  height: 360px;
-  width: 100%;
-  margin: 2vh 0 6vh 0;
-  object-fit: cover;
-}
+
 .main-services-banner {
   position: relative;
   min-height: 100vh;
@@ -383,6 +370,7 @@ h6 {
   min-height: 350px;
   z-index: 5;
   position: relative;
+  text-decoration: none;
 }
 .main-services .image-row .crop-card .header-title{
   position: absolute;
@@ -411,18 +399,43 @@ h6 {
   z-index: 2;
 }
 
-
-
-.main-crops{
+.main-crops-banner {
   position: relative;
-  height: 100vh;
+  height: 100%;
+  padding: 0;
+  margin: 3rem 0;
+  width: 100%;
+}
+.main-crops-banner .banner-img img{
+  height: 360px;
+  width: 100%;
+  margin: 2vh 0 6vh 0;
+  object-fit: cover;
 }
 
+.main-crops {
+  min-height: 100vh;
+}
+.main-crops .sheba-name{
+  z-index: 2;
+}
+.main-crops .sheba-name > div{
+  font-size: 14rem;
+  text-align: center;
+  font-family: "Net Herbarius";
+  color: #e8e8bf;
+}
+.main-crops .image-row {
+  margin: 10vh auto;
+}
 .main-crops .image-row .crop-card{
+  display: flex;
+  flex-direction: column;
   width: 27vw;
-  min-height: 350px;
+  min-height: 10vh;
   z-index: 5;
   position: relative;
+  margin: 0 2vw 0 0;
 }
 .main-crops .image-row .crop-card .header-title{
   position: absolute;
@@ -437,18 +450,6 @@ h6 {
   font-family: "Net Herbarius";
   z-index: 10;
   color: white;
-}
-.main-crops .sheba-name{
-  position: absolute;
-  top: -38vh;
-  width: 100%;
-}
-.main-crops .sheba-name > span{
-  font-size: 16rem;
-  font-family: "Net Herbarius";
-  /* color: #f8f6ef; */
-  color: #e8e8bf;
-  z-index: 2;
 }
 
 .wheat-banner{
@@ -466,16 +467,17 @@ h6 {
 
 /* New product section */
 .new-product {
-  margin: 0;
+  margin: 5% auto 3%;
   padding: 0;
   position: relative;
   display: flex;
   flex-direction: column;
+  background-color: #000;
 }
 
 .new-product .img-bg {
   position: absolute;
-  top: -3vh;
+  top: -5vh;
   z-index: 10;
   width: 100%;
   height: auto;
@@ -504,7 +506,11 @@ h6 {
   color: #fff;
 }
 
-.new-product .new-product-info button {
+.new-product .new-product-info .info-col {
+  padding-bottom: 20px;
+}
+.new-product .new-product-info a {
+  text-decoration: none;
   text-transform: uppercase;
   width: 30%;
   background: #1F1E17;
@@ -513,7 +519,7 @@ h6 {
   font-size: 1rem;
   padding: 0.5rem;
 }
-.new-product .new-product-info button:hover {
+.new-product .new-product-info a:hover {
   background: var(--primary);
   border-color: transparent;
   color: var(--secondary);
@@ -548,8 +554,9 @@ h6 {
   color: var(--secondary);
 }
 
-.organic-product button {
+.organic-product a {
   text-transform: uppercase;
+  text-decoration: none;
   width: 30%;
   background: #fff;
   border: 2px solid var(--primary);
@@ -557,7 +564,7 @@ h6 {
   font-size: 1rem;
   padding: 0.5rem;
 }
-.organic-product button:hover {
+.organic-product a:hover {
   background: var(--primary);
   border-color: transparent;
 }
@@ -591,6 +598,7 @@ h6 {
   padding: 0 0 8vh 0;
   height: 100%;
   position: relative;
+  background: #F8F6EF;
 }
 
 .product-slider .img-bg {
@@ -598,17 +606,26 @@ h6 {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
+  z-index: 1;
+  background-image: url("http://example.com/wp-content/uploads/2017/03/your-background-image.jpg"); 
   object-fit: cover;
+}
+
+.product-slider .product-slider-info{
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
 }
 
 .product-slider .product-slider-info h3{
   font-family: "Net Herbarius";
   color: var(--primary);
+  z-index: 100;
 }
 
 .product-slider .product-slider-info .title-info span{
   font-size: 1.6rem;
+  width: 3ch;
   font-weight: 600;
 }
 .product-slider .product-slider-info .title-sub h3{
@@ -640,7 +657,7 @@ h6 {
   letter-spacing: 1px;
   margin: 0 20px;
 }
-.carousel .carousel-inner .carousel-item .carousel-caption button {
+.carousel .carousel-inner .carousel-item .carousel-caption a {
   text-transform: uppercase;
   margin-top: 2vh;
   width: 40%;
@@ -648,8 +665,10 @@ h6 {
   border-color: transparent;
   font-size: 0.8rem;
   padding: 0.2rem;
+  text-decoration: none;
+  color: var(--secondary);
 }
-.carousel .carousel-inner .carousel-item .carousel-caption button:hover {
+.carousel .carousel-inner .carousel-item .carousel-caption a:hover {
   background: #fff;
   border: 2px solid var(--primary);
   color: var(--secondary);
@@ -668,16 +687,21 @@ h6 {
 .carousel .carousel-control-prev .carousel-control-prev-icon {
   background-color: var(--dark);
 }
-.carou-cont .all-prod-btn button {
+.carou-cont .all-prod-btn {
+  position: relative;
+  z-index: 1;
+}
+.carou-cont .all-prod-btn a {
   text-transform: uppercase;
-  margin-top: 4vh;
+  text-decoration: none;
+  margin: 4vh auto 2vh;
   width: 80%;
   background: var(--primary);
   border-color: transparent;
   font-size: 1rem;
   padding: 0.5rem;
 }
-.carou-cont .all-prod-btn button:hover {
+.carou-cont .all-prod-btn a:hover {
   background: var(--cream);
   border: 2px solid var(--primary);
   color: var(--secondary);
@@ -697,7 +721,7 @@ h6 {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: -2;
+  z-index: 1;
   object-fit: fill;
   padding: 0;
   margin: 0;
@@ -706,53 +730,134 @@ h6 {
   font-family: "Net Herbarius";
   color: var(--primary);
 }
+.testimonial .testimonial-info{
+  z-index: 2;
+  position: relative;
+}
+.testimonial .testimonial-info .product-reviews{
+  height: 100%;
+}
+.testimonial .testimonial-info .product-reviews li {
+  min-height: 100%;
+  min-width: 20%;
+}
+.testimonial .testimonial-info .product-reviews li span {
+  justify-self: start;
+}
+.testimonial .testimonial-info .product-reviews h4{
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+.testimonial .testimonial-info .product-reviews span {
+  font-style: italic;
+  font-size: .6rem;
+}
+
 /***********************/
 /*     Footer     */
 /***********************/
 
-.footer {
+.footer-container {
   color: var(--cream);
 }
-.footer h1 {
+.footer-container h1 {
   color: var(--white);
 }
-.footer h4 {
+.footer-container h4 {
   color: var(--gray);
   margin-top: 2rem;
 }
-.footer h3 {
+.footer-container .footer-menu-cont .footer-menu{
+  padding-left: 0;
+}
+.footer-container .footer-menu-cont h4 {
+  color: var(--gray);
+  margin: 10px auto;
+  text-transform: uppercase;
+}
+.footer-container h3 {
   font-family: "Net Herbarius";
   color: var(--primary);
 }
-.footer button {
+.footer-container .contact-link {
+  text-decoration: none;
+  color: var(--white);
+}
+.footer-container .contact-link:hover {
+  color: var(--primary);
+}
+.footer-container .contact-btn {
   text-transform: uppercase;
+  text-decoration: none;
   margin-top: 2vh;
   width: 40%;
   border: 2px solid var(--primary);
   color: var(--primary);
   background-color: var(--dark);
+  text-align: center;
   font-size: 1rem;
   padding: 0.5rem;
 }
-.footer button:hover {
+.footer-container .contact-btn:hover {
   background: var(--primary);
   color: var(--dark);
   border-color: transparent;
 }
-.footer i {
+.footer-container i {
   border-radius: 50%;
   padding: .6rem .7rem;
   background-color: var(--primary);
   border: 2px solid var(--primary);
   color: var(--dark);
 }
-.footer i:hover {
+.footer-container i:hover {
   border-radius: 50%;
   padding: .6rem;
   border: 2px solid var(--primary);
   background-color: var(--dark);
   color: var(--primary);
 }
+.footer-container .footer-note a{
+  color: var(--gray);
+  font-size: smaller;
+}
+.footer-container .footer-note a:last-child:hover{
+  cursor: pointer;
+}
+div.custom-menu-class ul {
+  list-style-type: none;
+  list-style: none;
+  list-style-image: none;
+  display: flex;
+  flex-direction: column;   
+}
+div.custom-menu-class li {
+  display: block;
+  background-color: 30px;
+} 
+
+div.custom-menu-class li.contact-btna span:hover {
+  color: orangered;
+} 
+
+div.custom-menu-class a span { 
+  color:rgb(255, 255, 255);
+}
+
+.footer-container .footer-menu-container .wpforms-container .wpforms-submit-container .wpforms-submit{
+  margin-top: 2vh;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background-color: var(--dark);
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.footer-container .footer-menu-container .wpforms-container .wpforms-submit-container .wpforms-submit:hover{
+  background: var(--primary);
+  color: var(--dark);
+  border-color: transparent;
+}
+
 /*
   wordpress class customizations
 */
@@ -822,6 +927,7 @@ Woo Commerce
 #review_form .comment-reply-title {
   text-decoration: underline;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 #review_form .comment-form .comment-notes {
@@ -837,7 +943,9 @@ Woo Commerce
 
 #review_form .comment-form .comment-form-comment textarea{
   border-radius: 12px;
+  padding: 20px 15px;
   max-width: 50vw;
+  letter-spacing: 1px;
 }
 
 #review_form .comment-form .comment-form-email {
@@ -954,13 +1062,178 @@ Woo Commerce
   margin: 0 1rem;
 }
 
+/*contact page*/
+.contact-page{
+  padding: 0;
+}
+.contact-page .phone-area .phone-btn span{
+  font-weight: 300;
+  font-size: 1.2rem;
+  width: 30%;
+  text-align: center;
+}
+.contact-page .phone-area .phone-btn a{
+  text-decoration: none;
+}
+.contact-page .phone-area .phone-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px auto;
+}
+.contact-page .phone-area .phone-btn:hover{
+  cursor: pointer;
+}
 
+.contact-form .wpforms-container .wpforms-validate .wpforms-field-textarea{
+  width: 60%;
+}
+.contact-form .wpforms-container .wpforms-validate .wpforms-submit{
+  text-transform: uppercase;
+  margin-top: 2vh;
+  border: 2px solid var(--primary);
+  color: var(--white);
+  background-color: var(--primary);
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+.contact-form .wpforms-container .wpforms-validate .wpforms-submit:hover{
+  border: 2px solid var(--primary);
+  color: var(--dark);
+  font-weight: 600;
+  background-color: var(--white);
+}
+.contact-page .banner-img img{
+  height: 360px;
+  width: 100%;
+  margin: 2vh 0 6vh 0;
+  object-fit: cover;
+}
+
+/* My account page */
+.woocommerce .woocommerce-MyAccount-navigation {
+  width: 70%;
+  margin: 3vh auto;
+}
+.woocommerce .woocommerce-MyAccount-navigation > ul {
+  list-style: none;
+  padding-right: 2vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.woocommerce .woocommerce-MyAccount-navigation > ul {
+  border-bottom: 1px solid var(--primary);
+}
+.woocommerce .woocommerce-MyAccount-navigation ul li {
+  border-radius: 12px 12px 0 0;
+  padding: 10px 25px;
+} 
+.woocommerce .woocommerce-MyAccount-navigation ul li a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: var(--secondary);
+}
+.woocommerce .woocommerce-MyAccount-navigation ul .is-active {
+  background-color: #a4cd39;
+}
+.woocommerce .woocommerce-MyAccount-navigation ul .is-active a {
+  color: white;
+}
+
+
+.woocommerce .woocommerce-MyAccount-navigation > ul > li{
+  padding: 15px 0;
+}
+.woocommerce .woocommerce-MyAccount-navigation > ul > li > a{
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.woocommerce .woocommerce-MyAccount-content {
+  width: 70%;
+  margin: 3vh auto;
+  display: block;
+}
+/*login form*/
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-container .woocommerce-form-login {
+  width: 70%;
+  margin: 0 auto;
+}
+.woocommerce-Input--password {
+  padding: 10px 15px;
+  border: 0.05rem solid #8c8c8c;
+  border-radius: 8px;
+}
+.woocommerce-Input--email {
+  padding: 10px 15px;
+  border: 0.05rem solid #8c8c8c;
+  border-radius: 8px;
+}
+.woocommerce-Input--text {
+  padding: 10px 15px;
+  border: 0.05rem solid #8c8c8c;
+  border-radius: 8px;
+}
+.woocommerce-LostPassword a {
+  text-decoration: none;
+}
+.login-container .woocommerce-form-login .woocommerce-button {
+  text-transform: uppercase;
+  width: 30%;
+  border: 2px solid var(--primary);
+  color: var(--white);
+  background-color: var(--primary);
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+.login-container .woocommerce-form-login .woocommerce-button:hover{  
+  border: 2px solid var(--primary);
+  color: var(--dark);
+  font-weight: 600;
+  background-color: var(--white);
+}
+
+.lost-container,
+.login-container{
+  min-height: 100vh;
+}
+.lost-container .woocommerce-ResetPassword .woocommerce-Button {
+  text-transform: uppercase;
+  width: 30%;
+  border: 2px solid var(--primary);
+  color: var(--white);
+  background-color: var(--primary);
+  font-size: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+.lost-container .woocommerce-ResetPassword .woocommerce-Button:hover{  
+  border: 2px solid var(--primary);
+  color: var(--dark);
+  font-weight: 600;
+  background-color: var(--white);
+}
 @media (max-width: 992px) {
+  .main-crops .sheba-name {
+    top: -6vh;
+  }
+  .main-crops .sheba-name > div{
+    font-size: 12rem;
+    z-index: 2;
+  }
   .main-content .modal-content h1 {
     font-size: 6rem;
     font-family: "Net Herbarius";
   }
-  .main-content .modal-content button {
+  .main-content .modal-content a {
     text-transform: uppercase;
     width: 10%;
     background: var(--primary);
@@ -971,6 +1244,50 @@ Woo Commerce
 }
 
 @media (max-width: 768px) {
+  .main-crops {
+    margin-top: 3vh;
+  }
+  .main-crops .image-row .crop-card{
+    width: 40vw;
+  }
+  .main-crops .image-row .crop-card .header-title{
+    position: absolute;
+    top: 0;
+    color: white;
+  }
+  .main-crops .image-row .crop-card .header-footer{
+    font-size: 1.4rem;
+  }
+  .main-crops .sheba-name{
+    position: absolute;
+    top: -1vh;
+    width: 100%;
+  }
+  .main-crops .sheba-name > div{
+    font-size: 5rem;
+    z-index: 2;
+  }
+  .organic-product .year-banner .years {
+    padding: 1.5rem 0.8rem;
+    border-radius: 18px;
+    top: 2rem;
+    left: -1rem;
+  }
+  
+  .organic-product .years h3 {
+    font-size: 1.8rem;
+  }
+  .organic-product .years span {
+    font-size: 0.8rem;
+  }
+  .organic-product .year-banner{
+    position: relative;
+    margin-left: 2rem;
+  }
+
+  .main-wrapper .navbar-brand {
+    width: 100px;
+  }
   .main-content .modal-content {
     top: 5%;
   }
@@ -981,12 +1298,30 @@ Woo Commerce
   .main-content p {
     font-size: 1rem;
   }
-  .main-content .modal-content button {
+  .main-content .modal-content a {
     text-transform: uppercase;
     width: 20%;
     background: var(--primary);
     border-color: transparent;
     font-size: 0.7rem;
     padding: 0.2rem;
+  }
+  .woocommerce .woocommerce-MyAccount-navigation ul{
+    padding-left: 0;
+  }
+  .woocommerce .woocommerce-MyAccount-navigation ul li {
+    padding: 10px 15px;
+    min-width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  } 
+  .woocommerce .woocommerce-MyAccount-navigation ul li a {
+    margin: 0;
+    font-size: 0.7rem;
+  }
+  .woocommerce .woocommerce-MyAccount-content {
+    margin: 3vh auto;
   }
 }

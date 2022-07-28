@@ -1,3 +1,13 @@
+<?php 
+	$query = new WC_Product_Query( array(
+		'limit' => 10,
+		'orderby' => 'date',
+		'order' => 'DESC',
+	) );
+	$products = $query->get_products();
+	$_product   = apply_filters( 'woocommerce_cart_item_product', $products[0], $products[0], 0 );
+	$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->get_permalink( $products ), $products, 0 );
+?>
 <div class="new-product">
 	<img
 		class="img-fluid img-bg" 
@@ -20,9 +30,9 @@
 			<p class="mt-1 lead">
 			We are happy to introduce our new product – Asparagus. The product will be ready for commercial sale in 2024.  Asparagus is low in calories and a great source of nutrients, including fiber, folate and vitamins A, C, E and K, phosphorous, Potassium and Foliate. Additionally, eating asparagus has a number of potential health benefits, including weight loss, improved digestion, anti-cancer, anti-inflammatory, healthy pregnancy outcomes and lower blood pressure.
 			</p>
-			<button class="mt-2">
+			<a class="my-2" href="<?php echo $product_permalink .'' ; ?>">
 				Explore More
-			</button>
+			</a>
 		</div>
 	</div>
 </div>

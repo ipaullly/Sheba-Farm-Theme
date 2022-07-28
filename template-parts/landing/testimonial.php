@@ -12,19 +12,6 @@
 		</div>
 	</div>
 	<div class="testimonial-info container mx-auto align-items-center row mt-4">
-		<div class="col-md-3"> 
-			<img
-				class="img-fluid" 
-				src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/test01.png'); ?>" 
-				alt="background" 
-				data-aos="fade-right"
-			>
-		</div>
-		<div class="col-md-6">
-			<p class="">
-			We are happy to introduce our new product goes by the name “Rahami Mkaa”. Rahami Mkaa is a good source of cooking fire that is in form of Briquettes available for very cheap cost with an advantage of long burning time. It provides the best alternative to a climate-conscious world, where as they use coconut by-products and convert them into charcoal that is friendly to the environment.
-			</p>
-		</div>
+		<?php echo do_shortcode( "[woo_reviews]" ); ?>
 	</div>
-	
 </div>

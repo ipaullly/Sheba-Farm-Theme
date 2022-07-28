@@ -1,3 +1,21 @@
+<?php 
+	$query = new WC_Product_Query( array(
+		'limit' => 10,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		// 'return' => 'names',
+	) );
+	$products = $query->get_products();
+
+	$_product   = apply_filters( 'woocommerce_cart_item_product', $products[0], $products[0], 0 );
+	$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->get_permalink( $products ), $products, 0 );
+
+	$_garlic   = apply_filters( 'woocommerce_cart_item_product', $products[2], $products[2], 0 );				
+	$garlic_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_garlic->get_permalink( $products ), $products, 0 );
+
+	$_tumeric   = apply_filters( 'woocommerce_cart_item_product', $products[1], $products[1], 0 );
+	$tumeric_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_tumeric->get_permalink( $products ), $products, 0 );
+?>
 <div class="main-services-banner container-fluid">
 	<div class="banner-img">
 		<img
@@ -10,7 +28,7 @@
 			<span>Sheba Farms</span>
 		</div>
 		<div class="image-row row d-flex justify-between">
-			<div class="crop-card">
+			<a class="crop-card" href="<?php echo $tumeric_permalink .'' ?>">
 				<span class="header-title">
 					Turmeric
 				</span>
@@ -21,8 +39,8 @@
 				<span class="header-footer" data-aos="fade-up" data-aos-delay="100">
 					Turmeric
 				</span>
-			</div>
-			<div class="crop-card">
+			</a>
+			<a class="crop-card" href="<?php echo $garlic_permalink .'' ?>">
 				<span class="header-title">
 					Garlic
 				</span>
@@ -33,8 +51,8 @@
 				<span class="header-footer" data-aos="fade-up" data-aos-delay="100">
 					Garlic
 				</span>
-			</div>
-			<div class="crop-card">
+			</a>
+			<a class="crop-card" href="<?php echo $product_permalink .'' ?>">
 				<span class="header-title">
 					Asparagus
 				</span>
@@ -45,7 +63,7 @@
 				<span class="header-footer" data-aos="fade-up" data-aos-delay="100">
 					Asparagus
 				</span>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>

@@ -11,37 +11,51 @@
 	<?php 
 	  wp_head();
 	?>
+	<style>
+		.woocommerce .banner-img {
+			background-image: url("<?php echo esc_url( get_template_directory_uri() . '/assets/images/banner.png');?>");
+			background-repeat: no-repeat;
+			/* background-attachment: fixed; */
+			height: 360px;
+			width: 100%;
+			margin: 2vh 0 6vh 0;
+			/* object-fit: cover; */
+			background-position: center;
+		}
+	</style>
 </head> 
 <body>
 
 <div class="main-wrapper">
-	<header class="d-flex justify-content-between align-items-center py-1">
-	<img
-		class="img-fluid mx-3"
-		width="180"
-		src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png'); ?>" alt="background" 
-	>
-		<!-- <a class="site-title pl-2" href="index.html"><?php echo get_bloginfo('name')?></a> -->
-		<nav class="container-fluid navbar d-flex flex-xs-row w-100">  
-			<div class="menu-toggle">
-
-				<?php 
+	<nav class="navbar navbar-expand-md navbar-light bg-white" role="navigation">
+  	<div class="container d-flex flex-row justify-md-content-start">
+			<a class="navbar-brand" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'home' ) ) ); ?>">
+				<img
+					class="img-fluid mx-3"
+					width="180"
+					src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png'); ?>" alt="background" 
+				>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="nav-menu-list" id="navbar-content">
+				<?php
 					wp_nav_menu( 
 						array(
+							'theme_location'  => 'primary',
+							'menu_id'        => 'primary',
 							'menu' => 'primary',
-							'container' => '',
-							'theme_location' => 'primary',
-							'items_wrap' => '<ul class="w-100 navbar-nav">%3$s</ul>',
-							'walker' => new header_menu_walker()
-						)
+							'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+							'container'       => 'div',
+							'container_class' => 'collapse navbar-collapse',
+							'container_id'    => 'bs-example-navbar-collapse-1',
+							'menu_class'      => 'navbar-nav menu-list',
+							'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+							'walker'          => new WP_Bootstrap_Navwalker(),
+						) 
 					);
 				?>
 			</div>
-			<!-- <div class="ml-xs-auto ml-lg-0 book-now">
-				<button class="btn-primary" href="#">Book Now</button>
-			</div> -->
-			<!-- <div class="shopping-icon">
-				<i class="fa-solid fas fa-bag-shopping"></i>
-			</div> -->
+				</div>
 		</nav>
-	</header>
