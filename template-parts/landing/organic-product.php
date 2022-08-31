@@ -17,10 +17,10 @@
 		</a>
 	</div>
 	<div class="year-banner col-md-6 mt-5">
-		<div class="years text-center">
+		<!-- <div class="years text-center">
 			<h3 class="mt-1 mb-1">7</h3>
 			<span>Years of experiences</span>
-		</div>
+		</div> -->
 		<div>
 			<img
 				class="img-fluid" 

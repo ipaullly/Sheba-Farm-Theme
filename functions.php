@@ -26,8 +26,9 @@
 
 	function sheba_register_styles(){
 		$version = wp_get_theme()->get('Version');
-		wp_enqueue_style('sheba-style', get_template_directory_uri() . "/style.css", array('sheba-bootstrap'), rand(111,9999), 'all');
+		// version for style version rand(111,9999)
 		wp_enqueue_style('sheba-bootstrap', "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css", array(), '5.1.3', 'all');
+		wp_enqueue_style('sheba-style', get_template_directory_uri() . "/style.css", array('sheba-bootstrap'), '1.0.0', 'all');
 		wp_enqueue_style('sheba-swiper', "https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.0/swiper-bundle.css", array(), '8.3.0', 'all');
 		wp_enqueue_style('sheba-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css", array(), '6.1.1', 'all');
 		wp_enqueue_style('sheba-aot', "https://unpkg.com/aos@next/dist/aos.css", array(), '', 'all');
@@ -199,6 +200,12 @@ function before_lost () {
 function after_lost () {
 	echo "</div>";
 }
+function pekky_cx_allowed_countries( $countries ) {
+	// Get all countries from woocommerce.
+	$countries = array_keys( WC()->countries->get_countries() );
+	return $countries;
+}
+add_filter( 'wc_pv_allowed_countries', 'pekky_cx_allowed_countries' );
 
 // add_action ("woocommerce_before_shop_loop_item", "before_shop");
 // add_action ("woocommerce_after_shop_loop_item", "after_shop");

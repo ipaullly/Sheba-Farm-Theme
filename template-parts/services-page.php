@@ -25,7 +25,7 @@
 	</div>
 	<div class="main-services container">
 		<div class="row sheba-name">
-			<span>Sheba Farms</span>
+			<span>Shebah Farms</span>
 		</div>
 		<div class="image-row row d-flex justify-between">
 			<a class="crop-card" href="<?php echo $tumeric_permalink .'' ?>">

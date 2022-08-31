@@ -7,13 +7,13 @@
   <div class="row container pt-5 mx-auto">
 		<div class="col-md-6 d-flex flex-column">
 			<h3 class="mt-2 mb-2">Contacts</h3>
-			<h1 class="mb-3">Get in Touch</h1>
+			<!-- <h1 class="mb-3">Get in Touch</h1>
 			<p class="mt-1">
 			We are happy to introduce our new product goes by the name “Rahami Mkaa”. Rahami Mkaa is a good source of cooking fire that is in form of Briquettes available for very cheap cost with an advantage of long burning time. It provides the best alternative to a climate-conscious world, where as they use coconut by-products and convert them into charcoal that is friendly to the environment.
-			</p>
+			</p> -->
 			<h4>LOCATION</h4>
-			<span>9233 Overlook Drive</span>
-			<span>Winter Park, 33231</span>
+			<span>Rumuruti, D367</span>
+			<span>Old Nyahururu Rumuruti Road</span>
 			<h4>PHONE</h4>
 			<a class="contact-link" href="tel:+254733334481">+254733334481</a>
 			<h4>EMAIL</h4>
@@ -28,7 +28,7 @@
 				src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/mapimg.png'); ?>" 
 				alt="background" 
 			> -->
-			<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1-XXac8Uc904ku8p6b77QsqQJoNOl5y4&ehbc=2E312F" width="480" height="700"></iframe>
+			<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1-XXac8Uc904ku8p6b77QsqQJoNOl5y4&ehbc=2E312F" width="450" height="700"></iframe>
 		</div>
 	</div>
 	<div class="row container footer-menu-container py-5 mx-auto">

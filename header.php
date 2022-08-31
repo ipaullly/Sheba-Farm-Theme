@@ -8,9 +8,6 @@
   <meta name="description" content="Sheba Farm">
   <meta name="author" content="https://github.com/ipaullly">    
   <link rel="shortcut icon" href="/foliage/wp-content/themes/sheba-theme/assets/images/logo.png"> 
-	<?php 
-	  wp_head();
-	?>
 	<style>
 		.woocommerce .banner-img {
 			background-image: url("<?php echo esc_url( get_template_directory_uri() . '/assets/images/banner.png');?>");
@@ -23,6 +20,9 @@
 			background-position: center;
 		}
 	</style>
+	<?php 
+	  wp_head();
+	?>
 </head> 
 <body>
 
@@ -39,6 +39,15 @@
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+			<!-- <?php
+				echo 'PHP version: ' . phpversion(); ?> -->
+				<!-- <?php
+
+				if (ZEND_THREAD_SAFE) {
+						echo 'Thread safe';
+				} else {
+						echo 'Not thread safe';
+				} ?> -->
 			<div class="nav-menu-list" id="navbar-content">
 				<?php
 					wp_nav_menu( 

@@ -50,7 +50,7 @@ get_header();
 <div class="main-about container row mx-auto">
 		<div class="col-md-6 mt-5">
 			<h3 class="mt-2 mb-5">Awesome Words About Us</h3>
-			<h1 class="mb-5">Sheba Farms Ltd is an agribusiness company</h1>
+			<h1 class="mb-5">Shebah Farms Ltd is an agribusiness company</h1>
 			<!-- <button class=""> -->
 				<a href="<?php echo $services_permalink .'' ; ?>">Explore More</a>
 			<!-- </button> -->
@@ -69,7 +69,7 @@ get_header();
 <div class="main-crops-banner container-fluid">
 	<div class="main-crops">
 		<div class="sheba-name">
-			<div>Sheba Farms</div>
+			<div>Shebah Farms</div>
 		</div>
 		<div class="image-row d-flex container">
 			<a class="crop-card" href="<?php echo $tumeric_permalink .'' ?>">

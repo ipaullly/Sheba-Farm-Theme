@@ -617,13 +617,13 @@ h6 {
   z-index: 2;
 }
 
-.product-slider .product-slider-info h3{
+.product-slider h3{
   font-family: "Net Herbarius";
   color: var(--primary);
   z-index: 100;
 }
 
-.product-slider .product-slider-info .title-info span{
+.product-slider .carou-cont .all-prod-btn .title-info span{
   font-size: 1.6rem;
   width: 3ch;
   font-weight: 600;
@@ -632,7 +632,7 @@ h6 {
   font-size: 3rem;
 }
 
-.product-slider .product-slider-info .title-info h3{
+.product-slider .carou-cont .all-prod-btn .title-info h3{
   font-size: 1.1rem;
 }
 .product-slider .product-slider-info .title-sub span{
@@ -697,6 +697,7 @@ h6 {
   margin: 4vh auto 2vh;
   width: 80%;
   background: var(--primary);
+  color: var(--white);
   border-color: transparent;
   font-size: 1rem;
   padding: 0.5rem;
